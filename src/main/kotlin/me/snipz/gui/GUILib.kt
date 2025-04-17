@@ -12,6 +12,8 @@ object GUILib {
 
         val listener = GUIListener(plugin)
         plugin.server.pluginManager.registerEvents(listener, plugin)
+
+        initialized = true
     }
 
 }
