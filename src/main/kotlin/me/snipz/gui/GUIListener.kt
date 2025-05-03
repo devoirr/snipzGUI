@@ -17,7 +17,7 @@ class GUIListener(private val plugin: Plugin) : Listener {
                 InventoryAction.PICKUP_ONE,
                 InventoryAction.PICKUP_HALF,
                 InventoryAction.PICKUP_SOME,
-                InventoryAction.PLACE_ALL,
+//                InventoryAction.PLACE_ALL,
             )
     }
 
