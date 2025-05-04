@@ -37,8 +37,6 @@ class GUIListener(private val plugin: Plugin) : Listener {
             return
         }
 
-        player.sendMessage(event.action.name)
-
         if (event.action == InventoryAction.HOTBAR_SWAP) {
             event.isCancelled = true
 
