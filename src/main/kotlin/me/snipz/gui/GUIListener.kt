@@ -90,13 +90,9 @@ class GUIListener(private val plugin: Plugin) : Listener {
 
     @EventHandler
     fun onDrag(event: InventoryDragEvent) {
-        val player = (event.whoClicked as? Player) ?: return
-        val inventory = event.inventory
+        val holder = event.inventory.getHolder(false) ?: return
 
-        if (inventory != player.openInventory.topInventory)
-            return
-
-        if (player.openInventory.topInventory !is GUI)
+        if (holder !is GUI)
             return
 
         event.isCancelled = true
