@@ -77,6 +77,7 @@ abstract class PaginatedGUI(player: Player, size: Int, title: Component): GUI(pl
         if (pagination.count() > page + 1) {
             page++
             redrawFillers()
+            redraw()
         }
     }
 
@@ -87,6 +88,7 @@ abstract class PaginatedGUI(player: Player, size: Int, title: Component): GUI(pl
 
         page--
         redrawFillers()
+        redraw()
     }
 
     fun addFiller(filler: FillerButton) {
