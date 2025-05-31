@@ -96,5 +96,6 @@ abstract class PaginatedGUI(player: Player, size: Int, title: Component): GUI(pl
     }
 
     fun isLastPage() = (pagination?.count() ?: 0) <= page + 1
+    fun isFirstPage() = page == 0
 
 }
