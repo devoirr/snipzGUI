@@ -1,5 +1,6 @@
 package me.snipz.gui
 
+import net.kyori.adventure.text.Component
 import org.bukkit.entity.Player
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
@@ -30,6 +31,8 @@ class GUIListener(private val plugin: Plugin) : Listener {
 
         if (holder !is GUI)
             return
+
+        player.sendMessage { Component.text("1") }
 
         if (player.isSleeping) {
             player.closeInventory()
@@ -83,6 +86,8 @@ class GUIListener(private val plugin: Plugin) : Listener {
         if (event.inventory.getHolder(false) !is GUI)
             return
 
+        event.player.sendMessage { Component.text("2") }
+
         (event.inventory.getHolder(false) as GUI).close(event)
     }
 
@@ -92,6 +97,8 @@ class GUIListener(private val plugin: Plugin) : Listener {
 
         if (holder !is GUI)
             return
+
+        event.whoClicked.sendMessage { Component.text("3") }
 
         event.isCancelled = true
     }
