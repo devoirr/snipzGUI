@@ -18,6 +18,7 @@ class GUIListener(private val plugin: Plugin) : Listener {
                 InventoryAction.PICKUP_ONE,
                 InventoryAction.PICKUP_HALF,
                 InventoryAction.PICKUP_SOME,
+                InventoryAction.DROP_ONE_SLOT
 //                InventoryAction.PLACE_ALL,
             )
     }
@@ -31,8 +32,6 @@ class GUIListener(private val plugin: Plugin) : Listener {
 
         if (holder !is GUI)
             return
-
-        player.sendMessage { Component.text("1") }
 
         if (player.isSleeping) {
             player.closeInventory()
@@ -86,8 +85,6 @@ class GUIListener(private val plugin: Plugin) : Listener {
         if (event.inventory.getHolder(false) !is GUI)
             return
 
-        event.player.sendMessage { Component.text("2") }
-
         (event.inventory.getHolder(false) as GUI).close(event)
     }
 
@@ -97,8 +94,6 @@ class GUIListener(private val plugin: Plugin) : Listener {
 
         if (holder !is GUI)
             return
-
-        event.whoClicked.sendMessage { Component.text("3") }
 
         event.isCancelled = true
     }
